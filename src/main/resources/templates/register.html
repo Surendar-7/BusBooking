@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Regsiter </title>
+
+    <link rel="stylesheet" href="../Static/regsiter.css">
+
+
+</head>
+<body>
+<form th:action="@{/saveUser}" th:object="${RegEntity}" method="post">
+
+   <div class="reg">
+       <label>UserName</label>
+       <input type="text" th:field="*{UserName}" >
+
+       <label>Email</label>
+       <input type="email" th:field="*{Email}">
+
+       <label>Password</label>
+       <input type="password" th:field="*{Password}">
+       <button><a href="#">Regsiter</a></button>
+   </div>
+</form>
+</body>
+</html>

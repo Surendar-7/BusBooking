@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table>
+
+    <thead>
+    <tr>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Password</th>
+    </tr>
+    </thead>
+    <tr th:each="s : ${RegEntity}">
+        <td  th:text="${s.UserName}"></td>
+        <td th:text="${s.Email}"></td>
+        <td th:text="${s.Password}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
+
