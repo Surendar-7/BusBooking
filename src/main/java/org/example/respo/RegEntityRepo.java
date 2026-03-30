@@ -7,4 +7,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RegEntityRepo extends JpaRepository<RegEntity, Long> {
+
+    RegEntity findByUserName(String UserName);
+    RegEntity findByEmail(String Email);
+    RegEntity findByPassword(String Password);
+    RegEntity findByEmailAndPassword(String email , String password);
 }

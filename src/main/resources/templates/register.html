@@ -3,23 +3,24 @@
 <head>
     <title>Regsiter </title>
 
-    <link rel="stylesheet" href="../Static/regsiter.css">
+    <link rel="stylesheet" href="regsiter.css">
 
 
 </head>
 <body>
-<form th:action="@{/saveUser}" th:object="${RegEntity}" method="post">
+<form th:action="@{/register}" th:object="${RegEntity}" method="post">
 
    <div class="reg">
        <label>UserName</label>
-       <input type="text" th:field="*{UserName}" >
+       <input type="text" name="username" th:field="*{UserName}" >
 
        <label>Email</label>
-       <input type="email" th:field="*{Email}">
+       <input type="email" name="email" th:field="*{Email}">
 
        <label>Password</label>
-       <input type="password" th:field="*{Password}">
+       <input type="password"  name="password" th:field="*{Password}">
        <button><a href="#">Regsiter</a></button>
+       <button><a th:href="@{/login}">login</a></button>
    </div>
 </form>
 </body>

@@ -38,4 +38,8 @@ public class RegEntity {
     public void setPassword(String password) {
         Password = password;
     }
+
+    public Object getUsername() {
+   return null;
+    }
 }
