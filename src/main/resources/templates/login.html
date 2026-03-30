@@ -8,17 +8,17 @@
 
 </head>
 <body>
-<form th:action="@{/register}" th:object="${RegEntity}" method="post">
+<form th:action="@{/saved}" th:object="${RegEntity}" method="post">
 
     <div class="reg">
         <label>UserName</label>
-        <input type="text" name="username" th:field="*{UserName}" >
+        <input type="text"  th:field="*{username}" >
 
         <label>Email</label>
-        <input type="email" name="email" th:field="*{Email}">
+        <input type="email"  th:field="*{email}">
 
         <label>Password</label>
-        <input type="password"  name="password" th:field="*{Password}">
+        <input type="password"   th:field="*{password}">
         <button><a>login</a></button>
     </div>
 </form>

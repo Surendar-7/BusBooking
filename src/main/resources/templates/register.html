@@ -8,19 +8,19 @@
 
 </head>
 <body>
-<form th:action="@{/register}" th:object="${RegEntity}" method="post">
+<form th:action="@{/datasaved}" th:object="${RegEntity}" method="post">
 
    <div class="reg">
        <label>UserName</label>
-       <input type="text" name="username" th:field="*{UserName}" >
+       <input type="text"  th:field="*{username}" >
 
        <label>Email</label>
-       <input type="email" name="email" th:field="*{Email}">
+       <input type="email"  th:field="*{email}">
 
        <label>Password</label>
-       <input type="password"  name="password" th:field="*{Password}">
-       <button><a href="#">Regsiter</a></button>
-       <button><a th:href="@{/login}">login</a></button>
+       <input type="password"  th:field="*{password}">
+       <button>Regsiter</button>
+       <a style="color:black;" th:href="@{/login}">login</a>
    </div>
 </form>
 </body>

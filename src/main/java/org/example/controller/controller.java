@@ -10,71 +10,51 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class controller {
-
-
-
     @Autowired
-    RegEntityRepo RegEntityRepo;
-
-    List<RegEntity> regdata=new ArrayList<>();
-
+    RegEntityRepo regEntityRepo;
 
     @GetMapping("/register")
-    public String reg(Model model){
+    public String reg(Model model) {
         model.addAttribute("RegEntity", new RegEntity());
         return "register";
     }
-    @PostMapping("/register")
-    public String save(@ModelAttribute ("RegEntity") RegEntity regEntity){
-        RegEntityRepo.save(regEntity);
-        return "register";
+
+
+    @PostMapping("/datasaved")
+    public String save(@ModelAttribute("RegEntity") RegEntity regEntity) {
+        regEntityRepo.save(regEntity);
+        return "redirect:/login";
     }
-
-
 
 
     @GetMapping("/login")
-    public String buslog(Model model){
+    public String loginPage(Model model) {
         model.addAttribute("RegEntity", new RegEntity());
         return "login";
     }
-    @PostMapping("/login")
-    public String login(@RequestParam String username ,
-                        @RequestParam String email , @RequestParam String password) {
-
-//        RegEntity  user=(RegEntityRepo.findByEmailAndPassword(email,password));
-//        RegEntity  user =( RegEntityRepo.findByUserName(email);
-//        RegEntity user=(RegEntityRepo.findByUserName(password);
-
-//        if (user.equals(email) && user.equals(password)){
-//            return "busbooking";
-//        }else {
-//            return "register";
-//        }
 
 
-        RegEntity user = RegEntityRepo.findByEmail(email);
+    @PostMapping("/saved")
+    public String login(@RequestParam String email,
+                        @RequestParam String password) {
 
-        if (user != null){
-            return "busbooking";
+        List<RegEntity>  user= regEntityRepo.findByEmailAndPassword(email,password);
+                
+
+        if (user!= null && regEntityRepo.equals(password) && regEntityRepo.equals(email)) {
+            return "redirect:/busbooking";
         } else {
-            return "register";
+            return "redirect:/register";
         }
-
     }
+
+
     @GetMapping("/busbooking")
-    public String bus(Model model){
-        model.addAttribute("RegEntity" , new RegEntity());
+    public String bus() {
         return "busbooking";
     }
-
-
-
-
-
 }

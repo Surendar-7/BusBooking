@@ -2,7 +2,6 @@ package org.example.tables;
 
 
 import jakarta.persistence.*;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Entity
 @Table(name = "regdata")
@@ -11,35 +10,39 @@ public class RegEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String UserName;
-    private String Email;
-    private String Password;
+    private String username;
+    private String email;
+    private String password;
 
-    public String getUserName() {
-        return UserName;
+    public long getId() {
+        return id;
     }
 
-    public void setUserName(String userName) {
-        UserName = userName;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
-    }
-
-    public Object getUsername() {
-   return null;
+        this.password = password;
     }
 }
