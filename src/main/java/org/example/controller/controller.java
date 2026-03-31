@@ -10,12 +10,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class controller {
+
+
     @Autowired
     RegEntityRepo regEntityRepo;
+
+
+
 
     @GetMapping("/register")
     public String reg(Model model) {
@@ -39,22 +45,23 @@ public class controller {
 
 
     @PostMapping("/saved")
-    public String login(@RequestParam String email,
+    public String login(@RequestParam String email,@RequestParam String username,
                         @RequestParam String password) {
 
-        List<RegEntity>  user= regEntityRepo.findByEmailAndPassword(email,password);
-                
 
-        if (user!= null && regEntityRepo.equals(password) && regEntityRepo.equals(email)) {
+        List<RegEntity> user;
+
+        user= regEntityRepo.findByEmailAndPassword(email,password);
+
+
+
+
+        if (user!= null) {
+
             return "redirect:/busbooking";
         } else {
             return "redirect:/register";
         }
     }
 
-
-    @GetMapping("/busbooking")
-    public String bus() {
-        return "busbooking";
-    }
 }

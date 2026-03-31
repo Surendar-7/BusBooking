@@ -2,10 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bus Booking</title>
+    <link rel="stylesheet" href="busbooking.css">
 </head>
 <body>
 
-<h1>HI</h1>
+
+<header>
+    <div class="logo">RedBus</div>
+
+    <div class="menu">
+        <span>Bookings</span>
+        <span>Help</span>
+        <span>Account</span>
+    </div>
+</header>
+
+
+<section class="hero">
+    <h1>India's No. 1 online<br>bus ticket booking site</h1>
+
+    <form th:action="@{/saved}"  th:method="post"  th:object="${BusDetailEntity}">
+        <div class="search-box">
+            <div class="input-group">
+                <label>From</label>
+                <input type="text" name="from"  th:field="*{fromlocation}">
+            </div>
+
+            <div class="input-group">
+                <label>To</label>
+                <input type="text"   name="to" th:field="*{tolocation}">
+            </div>
+
+            <div class="input-group">
+                <label>Date of Journey</label>
+                <input type="date">
+            </div>
+
+            <button class="search-btn">Search Buses</button>
+        </div>
+    </form>
+
+</section>
+
 </body>
 </html>
