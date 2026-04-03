@@ -16,4 +16,6 @@ public interface RegEntityRepo extends JpaRepository<RegEntity, Long> {
    List<RegEntity> findByusername(String username);
 
    List<RegEntity> findByEmailAndPassword(String email , String password);
+
+
 }

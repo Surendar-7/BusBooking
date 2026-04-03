@@ -6,10 +6,7 @@ import org.example.tables.BusDetailEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,18 +22,24 @@ public class SearchController {
         return "busbooking";
     }
 
-    @PostMapping("/saved")
-    public String placesdata(@RequestParam String from,
-                             @RequestParam String to , @ModelAttribute("BusDetailEntity") BusDetailEntity BusDetailEntity,
-                             Model model) {
-        BusDetailRepo.save(BusDetailEntity);
+//    @PostMapping("/saved")
+//    public String placesdata(@RequestParam String from,
+//                             @RequestParam String to , @ModelAttribute("BusDetailEntity") BusDetailEntity BusDetailEntity,
+//                             Model model) {
+//        BusDetailRepo.save(BusDetailEntity);
+//
+//        List<BusDetailEntity> d = BusDetailRepo.findByFromLocationAndToLocation(from , to);
+//
+//
+////        model.addAttribute("BusDetailEntity", BusDetailEntity);
+//
+//        return "register";
+//    }
 
-        List<BusDetailEntity> d = BusDetailRepo.findByFromLocationAndToLocation(from , to);
 
-
-//        model.addAttribute("BusDetailEntity", BusDetailEntity);
-
-        return "register";
+    @GetMapping("/search")
+    public List<BusDetailEntity> searchBus(@RequestParam String toPlace) {
+        return BusDetailRepo.findByToPlace(toPlace);
     }
 
 }

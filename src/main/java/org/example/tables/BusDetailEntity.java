@@ -9,8 +9,8 @@ public class BusDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String fromlocation;
-    private String tolocation;
+    private String fromLocation;
+    private String toLocation;
 
     public long getId() {
         return id;
@@ -20,22 +20,19 @@ public class BusDetailEntity {
         this.id = id;
     }
 
-    public String getFromlocation() {
-        return fromlocation;
+    public String getFromLocation() {
+        return fromLocation;
     }
 
-    public void setFromlocation(String fromlocation) {
-        this.fromlocation = fromlocation;
+    public void setFromLocation(String fromLocation) {
+        this.fromLocation = fromLocation;
     }
 
-    public String getTolocation() {
-        return tolocation;
+    public String getToLocation() {
+        return toLocation;
     }
 
-    public void setTolocation(String tolocation) {
-        this.tolocation = tolocation;
+    public void setToLocation(String toLocation) {
+        this.toLocation = toLocation;
     }
-
-
-
 }

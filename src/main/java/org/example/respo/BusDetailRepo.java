@@ -16,4 +16,7 @@ public interface BusDetailRepo extends JpaRepository<BusDetailEntity, Long> {
 //    List<BusDetailEntity> findByFromLocationAndToLocation(String fromplace, String to);
 
     List<BusDetailEntity> findByFromLocationAndToLocation(String from, String to);
+    List<BusDetailEntity>  findByToLocation(String tolocation);
+
+    List<BusDetailEntity> findByToPlace(String toLocation);
 }
