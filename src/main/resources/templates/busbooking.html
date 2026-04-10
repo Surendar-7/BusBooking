@@ -22,16 +22,16 @@
 <section class="hero">
     <h1>India's No. 1 online<br>bus ticket booking site</h1>
 
-    <form th:action="@{/saved}"  th:method="post"  th:object="${BusDetailEntity}">
+    <form th:action="@{/busbooking}"  th:method="post"  th:object="${BusEntity}">
         <div class="search-box">
             <div class="input-group">
                 <label>From</label>
-                <input type="text" name="from"  th:field="*{fromlocation}">
+                <input type="text"  th:field="*{fromPlace}">
             </div>
 
             <div class="input-group">
                 <label>To</label>
-                <input type="text"   name="to" th:field="*{tolocation}">
+                <input type="text"    th:field="*{toPlace}">
             </div>
 
             <div class="input-group">

@@ -1,0 +1,11 @@
+
+
+/* Available seat */
+.available {
+    background-color: green;
+}
+
+/* Sold seat */
+.sold {
+    background-color: gray;
+}

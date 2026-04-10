@@ -23,41 +23,36 @@ public class controller {
 
 
 
-    @GetMapping("/register")
+    @GetMapping("/register")  // started the main page
     public String reg(Model model) {
         model.addAttribute("RegEntity", new RegEntity());
         return "register";
     }
 
 
-    @PostMapping("/datasaved")
+    @PostMapping("/register") // stroed the data to DB
     public String save(@ModelAttribute("RegEntity") RegEntity regEntity) {
         regEntityRepo.save(regEntity);
         return "redirect:/login";
     }
 
 
-    @GetMapping("/login")
+    @GetMapping("/login")  // it is started the main login page
     public String loginPage(Model model) {
         model.addAttribute("RegEntity", new RegEntity());
         return "login";
     }
 
 
-    @PostMapping("/saved")
-    public String login(@RequestParam String email,@RequestParam String username,
-                        @RequestParam String password) {
+    @PostMapping("/saved")  // compare the data to the database
+    public String login(@RequestParam String email,
+                        @RequestParam String password
+                        ) {
 
+        List<RegEntity> user =
+                regEntityRepo.findByEmailAndPassword(email, password);
 
-        List<RegEntity> user;
-
-        user= regEntityRepo.findByEmailAndPassword(email,password);
-
-
-
-
-        if (user!= null) {
-
+        if (!user.isEmpty()) {
             return "redirect:/busbooking";
         } else {
             return "redirect:/register";

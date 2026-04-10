@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Booking</title>
+    <link rel="stylesheet" href="busdetails.css">
+</head>
+<body>
+
+
+<header>
+    <div class="logo">RedBus</div>
+
+    <div class="menu">
+        <span>Bookings</span>
+        <span>Help</span>
+        <span>Account</span>
+    </div>
+</header>
+
+<!--<div class="routes">-->
+<!--    <h5>-->
+<!--        <span th:text="${as.fromPlace}"></span>-->
+<!--        →-->
+<!--        <span th:text="${as.toPlace}"></span>-->
+<!--    </h5>-->
+<!--</div>-->
+
+
+<section class="hero">
+    <form>
+        <div class="search-box">
+            <div class="input-group">
+                <label>From</label>
+                <input type="text">
+            </div>
+
+            <div class="input-group">
+                <label>To</label>
+                <input type="text">
+            </div>
+
+            <div class="input-group">
+                <label>Date of Journey</label>
+                <input type="date">
+            </div>
+
+            <button class="search-btn">Search Buses</button>
+        </div>
+    </form>
+
+</section>
+
+
+<div class="container">
+
+    <div class="bus-card" th:each="as : ${result}"> <!--we can use the thymeleaf data to the html content -->
+
+
+        <div class="top-row">
+
+            <div class="left">
+                <h5>FLEXBUS Travels</h5>
+                <p class="type">A/C Sleeper (2+1)</p>
+            </div>
+
+            <div class="timing">
+                <h4>
+                    <span th:text="${as.fromPlace}"></span>
+                    →
+                    <span th:text="${as.toPlace}"></span>
+                </h4>
+                <p>10h 20m hrs</p>
+            </div>
+
+            <div class="price">
+                <h4>₹ <span th:text="${as.price}"></span></h4>
+                <p>Onwards</p>
+            </div>
+
+            <div>
+                <a th:href="@{/seat}">
+                    <button class="seat-btn">View Seats</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

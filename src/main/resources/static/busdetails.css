@@ -28,17 +28,13 @@ header {
 
 /* HERO */
 .hero {
-    height: 400px;
-    background: linear-gradient(to right, #4a6fa5, #7f8fc9);
+    height: 50px;
+    margin-bottom:150px;
     color: white;
     padding: 60px;
     position: relative;
 }
 
-.hero h1 {
-    font-size: 40px;
-    margin-bottom: 40px;
-}
 
 /* SEARCH BOX */
 .search-box {
@@ -47,7 +43,7 @@ header {
     border-radius: 20px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
     width: 80%;
     position: absolute;
     bottom: -40px;
@@ -84,5 +80,60 @@ header {
 
 .search-btn:hover {
     background: darkred;
+}
+
+
+/*BUS DETAILS PAGE DESIGN*/
+
+.container {
+    width: 90%;
+    margin: auto;
+
+}
+
+.bus-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.top-row {
+padding:25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left h2 {
+    margin: 0;
+}
+
+.type {
+    font-size: 14px;
+    color: gray;
+}
+
+.timing h3 {
+    margin: 0;
+}
+
+.timing p {
+    font-size: 13px;
+    color: gray;
+}
+
+.price {
+    text-align: right;
+}
+
+.seat-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 

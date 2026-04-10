@@ -10,11 +10,6 @@ import java.util.List;
 @Repository
 public interface RegEntityRepo extends JpaRepository<RegEntity, Long> {
 
-//    RegEntity findByUsername(String username);
-//    RegEntity findByEmail(String email);
-//    RegEntity findByPassword(String password);
-   List<RegEntity> findByusername(String username);
-
    List<RegEntity> findByEmailAndPassword(String email , String password);
 
 
