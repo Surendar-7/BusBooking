@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f6f6;
+    text-align: center;
+}
+
+.seat-container {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Hide checkbox */
+.seat-box input {
+    display: none;
+}
+
+/* Label container */
+.seat-box label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Seat shape */
+.seat {
+    width: 50px;
+    height: 100px;
+    border: 2px solid #2e7d32;
+    border-radius: 12px;
+    position: relative;
+    background: #fff;
+    transition: 0.3s;
+}
+
+
+/* Price text */
+.price {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Hover */
+.seat-box label:hover .seat {
+    background: #e8f5e9;
+}
+
+.seat-box input:checked + label .seat {
+    background: #66bb6a;
+    border-color: #2e7d32;
+}
+
+.seat-box input:checked + label .seat::after {
+    background: #1b5e20;
+}
+
+/* Sold seat */
+.seat-box label.sold .seat {
+    background: #e0e0e0;
+    border-color: #ccc;
+}
+
+.seat-box label.sold .seat::after {
+    background: #bdbdbd;
+}
+
+.seat-box label.sold {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Button */
+button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1b5e20;
+}

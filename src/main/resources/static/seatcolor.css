@@ -1,0 +1,36 @@
+/*
+
+
+*/
+/* Available → Green *//*
+
+.available {
+    background-color: green;
+}
+
+*/
+/* Sold → Gray *//*
+
+.sold {
+    background-color: gray;
+}
+
+        <!--   <div class="seat"
+                        th:classappend="${s.available} ? ' available' : ' sold'">
+                       <span  th:text="${s.busid}"></span>
+                       <p th:text="${s.seatno}">998</p>
+                   </div>
+
+                   <form th:action="@{/seat/selection}"  th:object="${seatEntity}"  th:method="post">
+   -->*/
+
+
+
+/*
+.no{
+heigth:10px;
+
+width:20px;
+
+background-color:black;
+}*/

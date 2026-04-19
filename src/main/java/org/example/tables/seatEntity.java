@@ -10,7 +10,7 @@ public class seatEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String seatNo;
-    private String  available;
+    private boolean  available;
     private String busId;
 
     public String getSeatNo() {
@@ -25,13 +25,13 @@ public class seatEntity {
         return busId;
     }
 
-    public String getAvailable() {
+   /* public String getAvailable() {
         return available;
     }
 
     public void setAvailable(String available) {
         this.available = available;
-    }
+    }*/
 
     public void setBusId(String busId) {
         this.busId = busId;
@@ -41,12 +41,11 @@ public class seatEntity {
 
 
 
-
-   /* public boolean isAvailable() {
+    public boolean isAvailable() {
         return available;
     }
 
     public void setAvailable(boolean available) {
         this.available = available;
-    }*/
+    }
 }

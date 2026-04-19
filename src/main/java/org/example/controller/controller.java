@@ -23,7 +23,7 @@ public class controller {
 
 
 
-    @GetMapping("/register")  // started the main page
+    @GetMapping("/register")  // started the main page and it is give the user data stored in DB
     public String reg(Model model) {
         model.addAttribute("RegEntity", new RegEntity());
         return "register";
