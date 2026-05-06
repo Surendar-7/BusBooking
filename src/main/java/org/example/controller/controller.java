@@ -30,7 +30,7 @@ public class controller {
     }
 
 
-    @PostMapping("/register") // stroed the data to DB
+    @PostMapping("/register") // stored the data to DB
     public String save(@ModelAttribute("RegEntity") RegEntity regEntity) {
         regEntityRepo.save(regEntity);
         return "redirect:/login";

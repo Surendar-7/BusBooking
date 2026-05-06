@@ -13,7 +13,7 @@ public class BusEntity {
     private long id;
     private String fromPlace;
     private String toPlace;
-    private String busNO;
+    private String busNo;
     private String price;
 
     public long getId() {
@@ -24,12 +24,12 @@ public class BusEntity {
         this.id = id;
     }
 
-    public String getBusNO() {
-        return busNO;
+    public String getBusNo() {
+        return busNo;
     }
 
-    public void setBusNO(String busNO) {
-        this.busNO = busNO;
+    public void setBusNo(String busNo) {
+        this.busNo = busNo;
     }
 
     public String getPrice() {

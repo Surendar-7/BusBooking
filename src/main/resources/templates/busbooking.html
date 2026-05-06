@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Bus Booking</title>
     <link rel="stylesheet" href="busbooking.css">
+
+    <script th:src="@{script.js}"></script>
 </head>
 <body>
 
@@ -40,6 +42,10 @@
             </div>
 
             <button class="search-btn">Search Buses</button>
+        </div>
+
+        <div class="extra-btn-container">
+            <button type="button" class="extra-btn" onclick="addBus()">Add Bus</button>
         </div>
     </form>
 

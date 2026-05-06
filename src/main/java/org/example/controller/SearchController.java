@@ -43,6 +43,14 @@ public class SearchController {
             return "busdetail";
         }
     }
+/*
+    @RequestMapping("/bus")
+        @PostMapping("/save")
+        public String saveBus(@RequestBody BusEntity BusEntity) {
+            BusDetailRepo.save(BusEntity);
+            return "Saved";
+    }*/
+
 }
 
 
